@@ -5,9 +5,14 @@
         render json: @ideas
       end
     
-
     def create
       @idea = Idea.create(idea_params)
+      render json: @idea
+    end
+
+    def update
+      @idea = Idea.find(params[:id])
+      @idea.update_attributes(idea_params)
       render json: @idea
     end
     

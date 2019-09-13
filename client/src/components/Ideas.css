@@ -9,3 +9,22 @@
     margin-left: 60px;
     padding:10px;
   }
+
+  .note-text {
+    border: 0;
+    background: none;
+    outline: none;
+    margin-top:10px;
+    width: 140px;
+    font-size: 11px;
+  }
+  
+  .form-text:focus {
+    border: solid 1px lightgrey;
+  }
+  
+  textarea {
+    resize: none;
+    height: 90px;
+    font-size: 11px;
+  }
