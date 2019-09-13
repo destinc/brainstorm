@@ -1,0 +1,11 @@
+.newIdeaButton {
+    display: inline-block;
+    background: darkblue;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 60px;
+    padding:10px;
+  }

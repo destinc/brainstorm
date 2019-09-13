@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Idea from './Idea'
+import './Ideas.css'
+
 
 class IdeasContainer extends Component {
     constructor(props) {
@@ -12,20 +15,33 @@ class IdeasContainer extends Component {
     componentDidMount() {
       axios.get('http://localhost:3001/ideas.json')
       .then(response => {
-          console.log(response)
           this.setState({ideas: response.data})
       })
       .catch(error => console.log(error))
     }
+
+    addNewIdea = () => {
+        axios.post('http://localhost:3001/ideas', 
+        {idea: {title: '', body: ''}})
+        .then(response => {
+            console.log(response)
+        //     this.setState({ideas: response.data})
+        })
+        .catch(error => console.log(error))
+      }
+     
   render() {
     return (
       <div>
+          <div>
+          <button className="newIdeaButton"
+            onClick={this.addNewIdea}>
+            New Idea
+          </button>
+          </div>
         {this.state.ideas.map((idea) => {
             return(
-                <div className="post-it" key={idea.id}>
-                    <h4>{idea.title}</h4>
-                    <p>{idea.body}</p>
-                </div>
+                <Idea idea={idea} key={idea.id} />
             )
         })}
       </div>
