@@ -1,9 +1,35 @@
-.App-header {
-  text-align: center;
-  height: 150px;
-  padding: 20px;
+
+.App {
+  /* display: flex;
+  flex-direction: column; */
+  background: url('../src/assets/Corkboard.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header-title {
+  font-size: 4vw;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
 }
 
 .App-header {
-  font-size: large;
+  margin: auto 0;
+  text-align: center;
+  height: 130px;
+  padding: 10px;
 }
+
+.post-it {
+  display: inline-grid;
+  height: 155px;
+  width: 155px;
+  margin: 7vw;
+  background: rgb(247, 247, 18);
+  font-size: 18px;
+  text-align: center;
+
+
+}
+

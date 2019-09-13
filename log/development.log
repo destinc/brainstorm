@@ -172,3 +172,66 @@ Processing by IdeasController#index as JSON
 Completed 200 OK in 22ms (Views: 5.0ms | ActiveRecord: 16.7ms | Allocations: 1312)
 
 
+Started GET "/ideas.json" for ::1 at 2019-09-12 22:32:41 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (6.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 15ms (Views: 8.5ms | ActiveRecord: 6.2ms | Allocations: 1299)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-12 22:34:29 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (5.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 5.5ms | Allocations: 1238)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-12 23:06:14 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.8ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.8ms | Allocations: 1299)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-12 23:12:03 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 1238)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-12 23:13:22 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 1238)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-12 23:19:41 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.7ms | Allocations: 1299)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-12 23:30:08 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (1.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.4ms | Allocations: 1313)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-12 23:35:18 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 1299)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-12 23:39:02 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.8ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.8ms | Allocations: 1238)
+
+
