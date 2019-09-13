@@ -46,6 +46,16 @@ class IdeasContainer extends Component {
         this.setState({ideas: ideas, notification: 'Idea saved', transitionIn: true})
       }
 
+      deleteIdea = (id) => {
+        axios.delete(`http://localhost:3001/ideas/${id}`)
+        .then(response => {
+          const ideaIndex = this.state.ideas.findIndex(x => x.id === id)
+          const ideas = update(this.state.ideas, { $splice: [[ideaIndex, 1]]})
+          this.setState({ideas: ideas})
+        })
+        .catch(error => console.log(error))
+      }
+
       resetNotification = () => {
         this.setState({notification: '', transitionIn: false})}
 
@@ -75,6 +85,7 @@ class IdeasContainer extends Component {
             return(
                 <Idea idea={idea} key={idea.id} 
                 onClick={this.enableEditing}
+                onDelete={this.deleteIdea}
                 />)
             }    
         })}

@@ -1,7 +1,5 @@
 
 .App {
-  /* display: flex;
-  flex-direction: column; */
   background: url('../src/assets/Corkboard.jpeg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
@@ -29,6 +27,23 @@
   background: rgb(247, 247, 18);
   font-size: 18px;
   text-align: center;
+}
+
+.note-title {
+  margin: auto 0;
+}
+
+.deleteButton {
+  visibility: hidden;
+  text-align: right;
+  margin: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  color: rgb(163, 7, 7);
+}
+
+.post-it:hover .deleteButton {
+  visibility: visible;
 }
 
 
