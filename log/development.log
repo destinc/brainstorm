@@ -1916,3 +1916,1624 @@ Processing by IdeasController#index as JSON
 Completed 200 OK in 13ms (Views: 4.0ms | ActiveRecord: 8.1ms | Allocations: 1264)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (212.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brainstorm_development"[0m
+  [1m[35m (207.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brainstorm_test"[0m
+  [1m[35m (453.5ms)[0m  [1m[35mCREATE DATABASE "brainstorm_development" ENCODING = 'unicode'[0m
+  [1m[35m (421.7ms)[0m  [1m[35mCREATE DATABASE "brainstorm_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ideas" CASCADE[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190913002703)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-14 18:11:01.315913"], ["updated_at", "2019-09-14 18:11:01.315913"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "af4656ef951194b8621473cc964071ed3a58fad3"], ["created_at", "2019-09-14 18:11:01.331974"], ["updated_at", "2019-09-14 18:11:01.331974"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "ideas" CASCADE[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190913002703)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-14 18:11:01.485817"], ["updated_at", "2019-09-14 18:11:01.485817"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-09-14 18:11:01.498079"], ["key", "environment"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "af4656ef951194b8621473cc964071ed3a58fad3"], ["created_at", "2019-09-14 18:11:01.508069"], ["updated_at", "2019-09-14 18:11:01.508069"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (3.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-14 18:11:01.559959"], ["updated_at", "2019-09-14 18:11:01.559959"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-14 18:11:01.569311"], ["updated_at", "2019-09-14 18:11:01.569311"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-14 18:11:01.575652"], ["updated_at", "2019-09-14 18:11:01.575652"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-14 18:11:01.582011"], ["updated_at", "2019-09-14 18:11:01.582011"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.6ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-14 18:11:07.221007"], ["updated_at", "2019-09-14 18:11:07.221007"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-14 18:11:07.228213"], ["updated_at", "2019-09-14 18:11:07.228213"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-14 18:11:07.234947"], ["updated_at", "2019-09-14 18:11:07.234947"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-14 18:11:07.241376"], ["updated_at", "2019-09-14 18:11:07.241376"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-14 18:11:55.939368"], ["updated_at", "2019-09-14 18:11:55.939368"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-14 18:11:55.946404"], ["updated_at", "2019-09-14 18:11:55.946404"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-14 18:11:55.952882"], ["updated_at", "2019-09-14 18:11:55.952882"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-14 18:11:55.958847"], ["updated_at", "2019-09-14 18:11:55.958847"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.6ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-14 18:12:49.962910"], ["updated_at", "2019-09-14 18:12:49.962910"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-14 18:12:49.970039"], ["updated_at", "2019-09-14 18:12:49.970039"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-14 18:12:49.976422"], ["updated_at", "2019-09-14 18:12:49.976422"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-14 18:12:49.982909"], ["updated_at", "2019-09-14 18:12:49.982909"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556844383093824815)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556844383093824815)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-14 18:13:32.641347"], ["updated_at", "2019-09-14 18:13:32.641347"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-14 18:13:32.648955"], ["updated_at", "2019-09-14 18:13:32.648955"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-14 18:13:32.655225"], ["updated_at", "2019-09-14 18:13:32.655225"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-14 18:13:32.661460"], ["updated_at", "2019-09-14 18:13:32.661460"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (208.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brainstorm_development"[0m
+  [1m[35m (215.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brainstorm_test"[0m
+  [1m[35m (458.5ms)[0m  [1m[35mCREATE DATABASE "brainstorm_development" ENCODING = 'unicode'[0m
+  [1m[35m (449.2ms)[0m  [1m[35mCREATE DATABASE "brainstorm_test" ENCODING = 'unicode'[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556844383093824815)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIdeas (20190913002703)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (47.4ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190913002703"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-14 18:14:05.719786"], ["updated_at", "2019-09-14 18:14:05.719786"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556844383093824815)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.9ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-14 18:14:18.368082"], ["updated_at", "2019-09-14 18:14:18.368082"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-14 18:14:18.375506"], ["updated_at", "2019-09-14 18:14:18.375506"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-14 18:14:18.385813"], ["updated_at", "2019-09-14 18:14:18.385813"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-14 18:14:18.398585"], ["updated_at", "2019-09-14 18:14:18.398585"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE DATABASE "brainstorm_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "brainstorm_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "ideas" CASCADE[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "af4656ef951194b8621473cc964071ed3a58fad3"], ["created_at", "2019-09-14 18:14:29.708361"], ["updated_at", "2019-09-14 18:14:29.708361"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "ideas" CASCADE[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190913002703)[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-14 18:14:29.808745"], ["updated_at", "2019-09-14 18:14:29.808745"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-09-14 18:14:29.818805"], ["key", "environment"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "af4656ef951194b8621473cc964071ed3a58fad3"], ["created_at", "2019-09-14 18:14:29.826782"], ["updated_at", "2019-09-14 18:14:29.826782"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (1.0ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-14 18:14:29.875694"], ["updated_at", "2019-09-14 18:14:29.875694"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-14 18:14:29.883249"], ["updated_at", "2019-09-14 18:14:29.883249"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-14 18:14:29.889826"], ["updated_at", "2019-09-14 18:14:29.889826"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-14 18:14:29.896334"], ["updated_at", "2019-09-14 18:14:29.896334"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (454.7ms)[0m  [1m[35mCREATE DATABASE "brainstorm_development" ENCODING = 'unicode'[0m
+  [1m[35m (424.2ms)[0m  [1m[35mCREATE DATABASE "brainstorm_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ideas" CASCADE[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190913002703)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-14 18:16:12.909490"], ["updated_at", "2019-09-14 18:16:12.909490"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "af4656ef951194b8621473cc964071ed3a58fad3"], ["created_at", "2019-09-14 18:16:12.921152"], ["updated_at", "2019-09-14 18:16:12.921152"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ideas" CASCADE[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190913002703)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-14 18:16:13.045859"], ["updated_at", "2019-09-14 18:16:13.045859"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-09-14 18:16:13.073589"], ["key", "environment"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "af4656ef951194b8621473cc964071ed3a58fad3"], ["created_at", "2019-09-14 18:16:13.081622"], ["updated_at", "2019-09-14 18:16:13.081622"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.8ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-14 18:16:13.132175"], ["updated_at", "2019-09-14 18:16:13.132175"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-14 18:16:13.139270"], ["updated_at", "2019-09-14 18:16:13.139270"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-14 18:16:13.145390"], ["updated_at", "2019-09-14 18:16:13.145390"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-14 18:16:13.151476"], ["updated_at", "2019-09-14 18:16:13.151476"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.6ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-14 18:16:23.422326"], ["updated_at", "2019-09-14 18:16:23.422326"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-14 18:16:23.429398"], ["updated_at", "2019-09-14 18:16:23.429398"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.5ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-14 18:16:23.440199"], ["updated_at", "2019-09-14 18:16:23.440199"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-14 18:16:23.451683"], ["updated_at", "2019-09-14 18:16:23.451683"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-09-14 14:17:36 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/destinc/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/destinc/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.4ms | Allocations: 317)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 0.0ms | Allocations: 1604)
+
+
+Started GET "/ideas" for ::1 at 2019-09-14 14:17:46 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.1ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 48ms (Views: 38.8ms | ActiveRecord: 6.9ms | Allocations: 5551)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-14 14:27:40 -0400
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.8ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 36ms (Views: 29.2ms | ActiveRecord: 4.9ms | Allocations: 5541)
+
+
+Started DELETE "/ideas/8" for ::1 at 2019-09-14 14:29:16 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 14ms (ActiveRecord: 3.4ms | Allocations: 4279)
+
+
+Started DELETE "/ideas/7" for ::1 at 2019-09-14 14:29:17 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 3.1ms | Allocations: 2205)
+
+
+Started DELETE "/ideas/6" for ::1 at 2019-09-14 14:29:18 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.5ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 3.4ms | Allocations: 2205)
+
+
+Started DELETE "/ideas/5" for ::1 at 2019-09-14 14:29:20 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 3.1ms | Allocations: 2205)
+
+
+Started DELETE "/ideas/4" for ::1 at 2019-09-14 14:29:21 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.5ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 13ms (ActiveRecord: 3.3ms | Allocations: 2189)
+
+
+Started POST "/ideas" for ::1 at 2019-09-14 14:30:57 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.6ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-14 18:30:57.008592"], ["updated_at", "2019-09-14 18:30:57.008592"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 2429)
+
+
+Started DELETE "/ideas/9" for ::1 at 2019-09-14 14:31:14 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 13ms (ActiveRecord: 3.2ms | Allocations: 2189)
+
+
+Started POST "/ideas" for ::1 at 2019-09-14 14:31:35 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-14 18:31:35.318949"], ["updated_at", "2019-09-14 18:31:35.318949"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 2273)
+
+
+Started DELETE "/ideas/10" for ::1 at 2019-09-14 14:31:49 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.3ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 3.2ms | Allocations: 2189)
+
+
+Started POST "/ideas" for ::1 at 2019-09-14 14:31:58 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-14 18:31:58.125023"], ["updated_at", "2019-09-14 18:31:58.125023"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 2271)
+
+
+Started POST "/ideas" for ::1 at 2019-09-14 14:32:05 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-14 18:32:05.957784"], ["updated_at", "2019-09-14 18:32:05.957784"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 2273)
+
+
+Started DELETE "/ideas/3" for ::1 at 2019-09-14 14:32:25 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.3ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 3.0ms | Allocations: 2189)
+
+
+Started POST "/ideas" for ::1 at 2019-09-14 14:32:27 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.6ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-14 18:32:27.041269"], ["updated_at", "2019-09-14 18:32:27.041269"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 2271)
+
+
+Started DELETE "/ideas/13" for ::1 at 2019-09-14 14:32:39 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 11ms (ActiveRecord: 5.8ms | Allocations: 2189)
+
+
+Started DELETE "/ideas/11" for ::1 at 2019-09-14 14:33:12 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.3ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 3.0ms | Allocations: 2189)
+
+
+Started POST "/ideas" for ::1 at 2019-09-14 14:33:23 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.5ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-14 18:33:23.266019"], ["updated_at", "2019-09-14 18:33:23.266019"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 2271)
+
+
+Started GET "/ideas" for ::1 at 2019-09-15 16:51:28 -0400
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.1ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 72ms (Views: 15.6ms | ActiveRecord: 50.2ms | Allocations: 5060)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-15 17:41:35 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.9ms | Allocations: 1340)
+
+
+Started DELETE "/ideas/12" for ::1 at 2019-09-15 17:41:46 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.5ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 12]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (45.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 69ms (ActiveRecord: 46.9ms | Allocations: 4280)
+
+
+Started DELETE "/ideas/14" for ::1 at 2019-09-15 17:41:49 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 3.3ms | Allocations: 2205)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 17:41:50 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (43.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-15 21:41:50.843250"], ["updated_at", "2019-09-15 21:41:50.843250"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 55ms (Views: 0.5ms | ActiveRecord: 48.4ms | Allocations: 2429)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 17:42:07 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.9ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-15 21:42:07.394615"], ["updated_at", "2019-09-15 21:42:07.394615"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 3.5ms | Allocations: 2287)
+
+
+Started DELETE "/ideas/15" for ::1 at 2019-09-15 17:42:10 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 3.3ms | Allocations: 2189)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-15 17:49:17 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (2.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 2.7ms | Allocations: 1210)
+
+
+Started DELETE "/ideas/16" for ::1 at 2019-09-15 17:49:46 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.5ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (41.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 48ms (ActiveRecord: 42.5ms | Allocations: 2216)
+
+
+Started DELETE "/ideas/2" for ::1 at 2019-09-15 17:49:48 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 3.2ms | Allocations: 2190)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-15 17:51:24 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (16.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 19ms (Views: 2.1ms | ActiveRecord: 16.2ms | Allocations: 913)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-15 17:57:15 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.9ms | Allocations: 975)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-15 17:57:22 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 913)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 17:57:25 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-15 21:57:25.208508"], ["updated_at", "2019-09-15 21:57:25.208508"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 2273)
+
+
+Started PUT "/ideas/17" for ::1 at 2019-09-15 17:57:27 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test Idea", "body"=>""}, "id"=>"17"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[36mIdea Update (0.5ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "Test Idea"], ["updated_at", "2019-09-15 21:57:27.651129"], ["id", 17]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 3019)
+
+
+Started PUT "/ideas/17" for ::1 at 2019-09-15 17:57:36 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test Idea", "body"=>"Please, Please, please"}, "id"=>"17"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "Please, Please, please"], ["updated_at", "2019-09-15 21:57:36.783160"], ["id", 17]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 6.0ms | Allocations: 2945)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 17:58:05 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.5ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-15 21:58:05.774297"], ["updated_at", "2019-09-15 21:58:05.774297"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 2271)
+
+
+Started DELETE "/ideas/17" for ::1 at 2019-09-15 17:58:08 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:20:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 3.9ms | Allocations: 2189)
+
+
+Started PUT "/ideas/18" for ::1 at 2019-09-15 17:58:24 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Mudville", "body"=>""}, "id"=>"18"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "Mudville"], ["updated_at", "2019-09-15 21:58:24.408699"], ["id", 18]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 2942)
+
+
+Started PUT "/ideas/18" for ::1 at 2019-09-15 17:58:36 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Mudville", "body"=>"Some joy, after all\n"}, "id"=>"18"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "Some joy, after all\n"], ["updated_at", "2019-09-15 21:58:36.952435"], ["id", 18]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+Completed 200 OK in 28ms (Views: 0.6ms | ActiveRecord: 3.3ms | Allocations: 2962)
+
+
+Started PUT "/ideas/1" for ::1 at 2019-09-15 17:58:43 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"New App", "body"=>"Awesome App"}, "id"=>"1"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 938)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 21:15:43 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 01:15:43.121200"], ["updated_at", "2019-09-16 01:15:43.121200"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 6.9ms | Allocations: 2271)
+
+
+Started PUT "/ideas/19" for ::1 at 2019-09-15 21:15:48 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"This ", "body"=>""}, "id"=>"19"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "This "], ["updated_at", "2019-09-16 01:15:48.685885"], ["id", 19]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 2942)
+
+
+Started PUT "/ideas/19" for ::1 at 2019-09-15 21:16:00 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"This ", "body"=>"This?\n"}, "id"=>"19"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[36mIdea Update (0.5ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "This?\n"], ["updated_at", "2019-09-16 01:16:00.908275"], ["id", 19]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 3.1ms | Allocations: 2943)
+
+
+Started PUT "/ideas/18" for ::1 at 2019-09-15 21:16:11 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Mudvill", "body"=>"Some joy, after all\n"}, "id"=>"18"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "Mudvill"], ["updated_at", "2019-09-16 01:16:11.712918"], ["id", 18]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.5ms | Allocations: 2942)
+
+
+Started PUT "/ideas/1" for ::1 at 2019-09-15 21:16:17 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"New App", "body"=>"Awesome App"}, "id"=>"1"}
+  [1m[36mIdea Load (2.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 936)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 21:16:17 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 01:16:17.903824"], ["updated_at", "2019-09-16 01:16:17.903824"]]
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:9:in `create'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 2271)
+
+
+Started PUT "/ideas/20" for ::1 at 2019-09-15 21:16:25 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Another good app idea", "body"=>""}, "id"=>"20"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "Another good app idea"], ["updated_at", "2019-09-16 01:16:25.750004"], ["id", 20]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 2942)
+
+
+Started PUT "/ideas/20" for ::1 at 2019-09-15 21:16:35 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Another good app idea", "body"=>"something flashy"}, "id"=>"20"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:14:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:15)
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[36mIdea Update (1.1ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "something flashy"], ["updated_at", "2019-09-16 01:16:35.566027"], ["id", 20]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 8.0ms | Allocations: 2943)
+
+
+Started GET "/ideas" for ::1 at 2019-09-15 21:22:49 -0400
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.8ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:5:in `index'
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 5.0ms | Allocations: 5057)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556844383093824815)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20190916012739)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (77.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190916012739"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556844383093824815)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-16 01:28:18.349480"], ["updated_at", "2019-09-16 01:28:18.349480"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-16 01:28:18.356887"], ["updated_at", "2019-09-16 01:28:18.356887"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-16 01:28:18.363096"], ["updated_at", "2019-09-16 01:28:18.363096"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-16 01:28:18.369598"], ["updated_at", "2019-09-16 01:28:18.369598"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/ideas.json" for ::1 at 2019-09-15 21:28:29 -0400
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x00007fbe618393a8>):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/ideas.json" for ::1 at 2019-09-15 21:29:09 -0400
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ideas.json"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/ideas" for ::1 at 2019-09-15 21:29:10 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/ideas"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/ideas.json" for ::1 at 2019-09-15 21:30:47 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as JSON
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 1175)
+
+
+Started GET "/ideas" for ::1 at 2019-09-15 21:30:50 -0400
+Processing by IdeasController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 241)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-15 21:30:50 -0400
+Processing by Devise::SessionsController#new as HTML
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 5.7ms | Allocations: 6262)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-15 21:31:15 -0400
+Processing by IdeasController#index as JSON
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 98)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-15 21:31:30 -0400
+Processing by IdeasController#index as JSON
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 98)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 21:31:33 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 98)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-15 21:31:33 -0400
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 256)
+
+
+Started PUT "/ideas/undefined" for ::1 at 2019-09-15 21:31:38 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test Idea"}, "id"=>"undefined"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 98)
+
+
+Started PUT "/users/sign_in" for ::1 at 2019-09-15 21:31:38 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/users/sign_in"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/ideas/undefined" for ::1 at 2019-09-15 21:31:52 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test Idea", "body"=>"asdfas"}, "id"=>"undefined"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 108)
+
+
+Started PUT "/users/sign_in" for ::1 at 2019-09-15 21:31:52 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/users/sign_in"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/ideas" for ::1 at 2019-09-15 21:31:57 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 98)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-15 21:31:57 -0400
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 285)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556844383093824815)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToIdeas (20190916013227)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (44.8ms)[0m  [1m[35mALTER TABLE "ideas" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556844383093824815)[0m
+Started POST "/ideas" for ::1 at 2019-09-15 21:35:42 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556844383093824815)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToIdeas (20190916013227)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "ideas" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556844383093824815)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556844383093824815)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20190916012739)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (49.3ms)[0m  [1m[35mDROP INDEX  "index_users_on_reset_password_token"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP INDEX  "index_users_on_email"[0m
+  [1m[35m (4.7ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190916012739"]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556844383093824815)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556844383093824815)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIdeas (20190913002703)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "ideas"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190913002703"]]
+  [1m[35m (45.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556844383093824815)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (242.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brainstorm_development"[0m
+  [1m[35m (261.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "brainstorm_test"[0m
+  [1m[35m (544.0ms)[0m  [1m[35mCREATE DATABASE "brainstorm_development" ENCODING = 'unicode'[0m
+  [1m[35m (406.2ms)[0m  [1m[35mCREATE DATABASE "brainstorm_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-16 01:53:46.142119"], ["updated_at", "2019-09-16 01:53:46.142119"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "83e6e9510955ef04f606b0339b1f0d53760104f9"], ["created_at", "2019-09-16 01:53:46.153737"], ["updated_at", "2019-09-16 01:53:46.153737"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-16 01:53:46.272794"], ["updated_at", "2019-09-16 01:53:46.272794"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-09-16 01:53:46.282312"], ["key", "environment"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "83e6e9510955ef04f606b0339b1f0d53760104f9"], ["created_at", "2019-09-16 01:53:46.290880"], ["updated_at", "2019-09-16 01:53:46.290880"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4556844383093824815)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateIdeas (20190913002703)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190913002703"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4556844383093824815)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (1.1ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-16 01:54:05.219928"], ["updated_at", "2019-09-16 01:54:05.219928"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-16 01:54:05.225984"], ["updated_at", "2019-09-16 01:54:05.225984"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-16 01:54:05.233150"], ["updated_at", "2019-09-16 01:54:05.233150"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-16 01:54:05.239460"], ["updated_at", "2019-09-16 01:54:05.239460"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for ::1 at 2019-09-15 21:54:47 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-09-15 21:54:51 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/destinc/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/destinc/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 16.5ms | Allocations: 197)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 873)
+
+
+Started GET "/ideas" for ::1 at 2019-09-15 21:55:00 -0400
+Processing by IdeasController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1587)
+
+
+  
+NameError (uninitialized constant IdeasController::Ideas):
+  
+app/controllers/ideas_controller.rb:5:in `index'
+Started GET "/ideas" for ::1 at 2019-09-15 21:58:47 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 6.3ms | Allocations: 5114)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-15 21:58:52 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 1281)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 22:05:36 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.9ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 02:05:36.243425"], ["updated_at", "2019-09-16 02:05:36.243425"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (41.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 48ms (Views: 0.5ms | ActiveRecord: 42.6ms | Allocations: 2492)
+
+
+Started PUT "/ideas/5" for ::1 at 2019-09-15 22:05:41 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"my idea", "body"=>""}, "id"=>"5"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "my idea"], ["updated_at", "2019-09-16 02:05:41.457797"], ["id", 5]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 3.6ms | Allocations: 5051)
+
+
+Started PUT "/ideas/5" for ::1 at 2019-09-15 22:05:45 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"my idea", "body"=>"an idea"}, "id"=>"5"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (0.8ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "an idea"], ["updated_at", "2019-09-16 02:05:45.376367"], ["id", 5]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 4.2ms | Allocations: 2945)
+
+
+Started PUT "/ideas/4" for ::1 at 2019-09-15 22:06:08 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Card game design", "body"=>"Whist meets Pokemon"}, "id"=>"4"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 938)
+
+
+Started PUT "/ideas/3" for ::1 at 2019-09-15 22:06:17 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"The Martian Falcon", "body"=>"Space Detective novel"}, "id"=>"3"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 949)
+
+
+Started DELETE "/ideas/5" for ::1 at 2019-09-15 22:06:17 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.7ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 4.0ms | Allocations: 2212)
+
+
+Started PUT "/ideas/1" for ::1 at 2019-09-15 22:06:42 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"New App", "body"=>"Awesome App"}, "id"=>"1"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 938)
+
+
+Started PUT "/ideas/3" for ::1 at 2019-09-15 22:06:44 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"The Martian Falcon", "body"=>"Space Detective novel"}, "id"=>"3"}
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 936)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 22:06:44 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.5ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 02:06:44.215702"], ["updated_at", "2019-09-16 02:06:44.215702"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.9ms | Allocations: 2271)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 22:15:01 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (1.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 02:15:01.562189"], ["updated_at", "2019-09-16 02:15:01.562189"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 4.1ms | Allocations: 2290)
+
+
+Started DELETE "/ideas/6" for ::1 at 2019-09-15 22:15:07 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 3.6ms | Allocations: 2259)
+
+
+Started PUT "/ideas/7" for ::1 at 2019-09-15 22:15:13 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test button", "body"=>""}, "id"=>"7"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "Test button"], ["updated_at", "2019-09-16 02:15:13.951287"], ["id", 7]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 2943)
+
+
+Started PUT "/ideas/7" for ::1 at 2019-09-15 22:15:20 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test button", "body"=>"button works"}, "id"=>"7"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (0.8ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "button works"], ["updated_at", "2019-09-16 02:15:20.461725"], ["id", 7]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 4.4ms | Allocations: 2943)
+
+
+Started PUT "/ideas/7" for ::1 at 2019-09-15 22:15:42 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test button", "body"=>"button works"}, "id"=>"7"}
+  [1m[36mIdea Load (0.8ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 936)
+
+
+Started DELETE "/ideas/1" for ::1 at 2019-09-15 22:15:42 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 3.0ms | Allocations: 2189)
+
+
+Started PUT "/ideas/7" for ::1 at 2019-09-15 22:15:45 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test button", "body"=>"button works"}, "id"=>"7"}
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 936)
+
+
+Started DELETE "/ideas/4" for ::1 at 2019-09-15 22:15:45 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.8ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 3.9ms | Allocations: 2189)
+
+
+Started PUT "/ideas/7" for ::1 at 2019-09-15 22:15:51 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test button", "body"=>"button works"}, "id"=>"7"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 936)
+
+
+Started PUT "/ideas/7" for ::1 at 2019-09-15 22:15:55 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test button", "body"=>"button work"}, "id"=>"7"}
+  [1m[36mIdea Load (0.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (0.5ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "button work"], ["updated_at", "2019-09-16 02:15:55.968228"], ["id", 7]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 2943)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 22:16:34 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 02:16:34.966758"], ["updated_at", "2019-09-16 02:16:34.966758"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 2271)
+
+
+Started PUT "/ideas/8" for ::1 at 2019-09-15 22:16:39 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test Idea", "body"=>""}, "id"=>"8"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "Test Idea"], ["updated_at", "2019-09-16 02:16:39.548444"], ["id", 8]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 2942)
+
+
+Started PUT "/ideas/8" for ::1 at 2019-09-15 22:16:43 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Test Idea", "body"=>"why?"}, "id"=>"8"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (1.2ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "why?"], ["updated_at", "2019-09-16 02:16:43.951990"], ["id", 8]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 4.4ms | Allocations: 2943)
+
+
+Started POST "/ideas" for ::1 at 2019-09-15 22:16:51 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.5ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 02:16:51.950527"], ["updated_at", "2019-09-16 02:16:51.950527"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 2271)
+
+
+Started DELETE "/ideas/8" for ::1 at 2019-09-15 22:16:54 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.9ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 3.6ms | Allocations: 2189)
+
+
+Started PUT "/ideas/9" for ::1 at 2019-09-15 22:16:58 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}, "id"=>"9"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 936)
+
+
+Started DELETE "/ideas/7" for ::1 at 2019-09-15 22:21:44 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.8ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 3.8ms | Allocations: 2189)
+
+
+Started PUT "/ideas/9" for ::1 at 2019-09-15 22:21:47 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}, "id"=>"9"}
+  [1m[36mIdea Load (1.1ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 936)
+
+
+Started PUT "/ideas/9" for ::1 at 2019-09-15 22:21:56 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}, "id"=>"9"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 936)
+
+
+Started PUT "/ideas/9" for ::1 at 2019-09-15 22:26:25 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}, "id"=>"9"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 936)
+
+
+Started PUT "/ideas/9" for ::1 at 2019-09-15 22:27:03 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}, "id"=>"9"}
+  [1m[36mIdea Load (5.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 5.7ms | Allocations: 936)
+
+

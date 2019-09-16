@@ -3,6 +3,7 @@ import axios from 'axios'
 import update from 'immutability-helper'
 import Idea from './Idea'
 import IdeaForm from './IdeaForm'
+ import Notification from './Notification'
 import './Ideas.css'
 
 
@@ -12,12 +13,13 @@ class IdeasContainer extends Component {
         this.state = {
             ideas: [],
             editingIdeaId: null,
-            notification: ''
+            notification: '',
+            transitionIn: false
         }
     }
 
     componentDidMount() {
-      axios.get('http://localhost:3001/ideas.json')
+      axios.get( 'http://localhost:3000/ideas.json' )
       .then(response => {
           this.setState({ideas: response.data})
       })
@@ -25,10 +27,9 @@ class IdeasContainer extends Component {
     }
 
     addNewIdea = () => {
-        axios.post('http://localhost:3001/ideas', 
+        axios.post('http://localhost:3000/ideas', 
         {idea: {title: '', body: ''}})
         .then(response => {
-            console.log(response)
             const ideas = update(this.state.ideas, {
                 $splice: [[0, 0, response.data]]
               })
@@ -47,7 +48,7 @@ class IdeasContainer extends Component {
       }
 
       deleteIdea = (id) => {
-        axios.delete(`http://localhost:3001/ideas/${id}`)
+        axios.delete(`http://localhost:3000/ideas/${id}`)
         .then(response => {
           const ideaIndex = this.state.ideas.findIndex(x => x.id === id)
           const ideas = update(this.state.ideas, { $splice: [[ideaIndex, 1]]})
@@ -73,6 +74,7 @@ class IdeasContainer extends Component {
             onClick={this.addNewIdea}>
             New Idea
           </button>
+          <Notification in={this.state.transitionIn} notification= {this.state.notification} />
           </div>
         {this.state.ideas.map((idea) => {
             if(this.state.editingIdeaId === idea.id) {
