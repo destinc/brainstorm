@@ -1,6 +1,6 @@
 
 .App {
-  background: url('../src/assets/Corkboard.jpeg') no-repeat center center fixed;
+  background: url('./assets/cork7.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   overflow: auto;

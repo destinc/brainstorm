@@ -1,7 +1,8 @@
-import axios from 'axios'
+import axios from 'axios';
+const baseUrl = 'http://localhost:3000'
 
 const api = axios.create({
-badseUrl = 'http://localhost:3000'
+  baseURL: baseUrl
 })
 
 export const loginUser = async (loginData) => {
