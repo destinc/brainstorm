@@ -3537,3 +3537,308 @@ DEPRECATION WARNING: update_attributes is deprecated and will be removed from Ra
 Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 5.7ms | Allocations: 936)
 
 
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (4.6ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-16 12:48:32.000621"], ["updated_at", "2019-09-16 12:48:32.000621"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-16 12:48:32.013320"], ["updated_at", "2019-09-16 12:48:32.013320"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-16 12:48:32.020505"], ["updated_at", "2019-09-16 12:48:32.020505"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-16 12:48:32.026952"], ["updated_at", "2019-09-16 12:48:32.026952"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/ideas.json" for ::1 at 2019-09-16 08:48:53 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (1.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 5.0ms | Allocations: 5410)
+
+
+Started DELETE "/ideas/9" for ::1 at 2019-09-16 08:48:58 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (41.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 52ms (ActiveRecord: 42.9ms | Allocations: 2689)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-16 08:50:18 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 1515)
+
+
+Started POST "/ideas" for ::1 at 2019-09-16 08:50:22 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.5ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 12:50:22.064401"], ["updated_at", "2019-09-16 12:50:22.064401"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 2444)
+
+
+Started POST "/ideas" for ::1 at 2019-09-16 08:50:22 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 12:50:22.500276"], ["updated_at", "2019-09-16 12:50:22.500276"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 2287)
+
+
+Started POST "/ideas" for ::1 at 2019-09-16 08:50:22 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 12:50:22.820603"], ["updated_at", "2019-09-16 12:50:22.820603"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 2273)
+
+
+Started POST "/ideas" for ::1 at 2019-09-16 08:50:23 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 12:50:23.069559"], ["updated_at", "2019-09-16 12:50:23.069559"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 2273)
+
+
+Started DELETE "/ideas/16" for ::1 at 2019-09-16 08:52:26 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (3.0ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 13ms (ActiveRecord: 6.2ms | Allocations: 2190)
+
+
+Started DELETE "/ideas/15" for ::1 at 2019-09-16 08:52:37 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.9ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 4.0ms | Allocations: 2190)
+
+
+Started DELETE "/ideas/14" for ::1 at 2019-09-16 08:52:38 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.5ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 3.8ms | Allocations: 2189)
+
+
+Started PUT "/ideas/17" for ::1 at 2019-09-16 08:52:48 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"test", "body"=>""}, "id"=>"17"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "test"], ["updated_at", "2019-09-16 12:52:48.916332"], ["id", 17]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.6ms | Allocations: 2989)
+
+
+Started PUT "/ideas/17" for ::1 at 2019-09-16 08:52:51 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"test", "body"=>"a test"}, "id"=>"17"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (1.1ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "a test"], ["updated_at", "2019-09-16 12:52:51.789042"], ["id", 17]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 51ms (Views: 0.5ms | ActiveRecord: 42.8ms | Allocations: 2945)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 09:18:00 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.1ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.1ms | Allocations: 1676)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 09:27:50 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (2.0ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 2.0ms | Allocations: 1676)
+
+
+Started GET "/ideas.json" for ::1 at 2019-09-16 09:27:53 -0400
+Processing by IdeasController#index as JSON
+  [1m[36mIdea Load (2.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 2.7ms | Allocations: 1625)
+
+
+Started DELETE "/ideas/3" for ::1 at 2019-09-16 09:28:04 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.7ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 3.7ms | Allocations: 2217)
+
+
+Started DELETE "/ideas/2" for ::1 at 2019-09-16 09:28:06 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.6ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 11ms (ActiveRecord: 6.1ms | Allocations: 2189)
+
+
+Started DELETE "/ideas/13" for ::1 at 2019-09-16 09:30:27 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 3.1ms | Allocations: 2189)
+
+
+Started POST "/ideas" for ::1 at 2019-09-16 09:30:29 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-16 13:30:29.430654"], ["updated_at", "2019-09-16 13:30:29.430654"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 2272)
+
+
+Started PUT "/ideas/18" for ::1 at 2019-09-16 09:30:31 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"skadfhakfjh", "body"=>""}, "id"=>"18"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (0.4ms)[0m  [1m[33mUPDATE "ideas" SET "title" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["title", "skadfhakfjh"], ["updated_at", "2019-09-16 13:30:31.763140"], ["id", 18]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 2942)
+
+
+Started PUT "/ideas/18" for ::1 at 2019-09-16 09:30:33 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"skadfhakfjh", "body"=>"a;ksfjha;fjh"}, "id"=>"18"}
+  [1m[36mIdea Load (1.1ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (1.1ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", "a;ksfjha;fjh"], ["updated_at", "2019-09-16 13:30:33.291179"], ["id", 18]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 4.6ms | Allocations: 2943)
+
+
+Started PUT "/ideas/17" for ::1 at 2019-09-16 09:30:37 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"test", "body"=>"a test"}, "id"=>"17"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 936)
+
+
+Started PUT "/ideas/17" for ::1 at 2019-09-16 09:30:40 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"test", "body"=>""}, "id"=>"17"}
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[36mIdea Update (0.8ms)[0m  [1m[33mUPDATE "ideas" SET "body" = $1, "updated_at" = $2 WHERE "ideas"."id" = $3[0m  [["body", ""], ["updated_at", "2019-09-16 13:30:40.732755"], ["id", 17]]
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:16:in `update'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 4.7ms | Allocations: 2943)
+
+
+Started DELETE "/ideas/18" for ::1 at 2019-09-16 09:31:36 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:21:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[36mIdea Destroy (0.7ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 3.6ms | Allocations: 2189)
+
+
