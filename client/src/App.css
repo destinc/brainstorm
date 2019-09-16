@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css?family=Bungee+Inline|Open+Sans&display=swap" rel="stylesheet");
 .App {
   background: url('./assets/cork7.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -8,8 +8,8 @@
 
 .header-title {
   font-size: 6vw;
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
+  font-family: 'Bungee Inline', cursive;
+  font-weight: 400;
 }
 
 .App-header {

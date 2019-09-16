@@ -5384,3 +5384,340 @@ Processing by IdeasController#index as HTML
 Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms | Allocations: 1264)
 
 
+Started POST "/auth/login" for ::1 at 2019-09-16 17:51:15 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (42.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 369ms (Views: 0.3ms | ActiveRecord: 51.3ms | Allocations: 6204)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 17:51:41 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 284ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 815)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New App"], ["body", "Awesome App"], ["created_at", "2019-09-16 21:52:32.273865"], ["updated_at", "2019-09-16 21:52:32.273865"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A twitter client idea"], ["body", "Like twitter, but for food"], ["created_at", "2019-09-16 21:52:32.281821"], ["updated_at", "2019-09-16 21:52:32.281821"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Martian Falcon"], ["body", "Space Detective novel"], ["created_at", "2019-09-16 21:52:32.288136"], ["updated_at", "2019-09-16 21:52:32.288136"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIdea Create (0.3ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Card game design"], ["body", "Whist meets Pokemon"], ["created_at", "2019-09-16 21:52:32.294301"], ["updated_at", "2019-09-16 21:52:32.294301"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/ideas" for ::1 at 2019-09-16 17:52:43 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.8ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 4.8ms | Allocations: 5529)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 17:53:10 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 327ms (Views: 0.2ms | ActiveRecord: 4.2ms | Allocations: 5668)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 17:53:24 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.7ms | Allocations: 1747)
+
+
+Started PUT "/ideas/35" for ::1 at 2019-09-16 17:53:59 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Card game design", "body"=>"Whist meets Pokemon"}, "id"=>"35"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1189)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 17:56:17 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (9.1ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 2.9ms | ActiveRecord: 9.1ms | Allocations: 1730)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 17:56:46 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1730)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 17:56:50 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 1730)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 17:59:43 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1730)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:00:14 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1018)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:5:in `login'
+Started POST "/auth/login" for ::1 at 2019-09-16 18:00:21 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 287ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 835)
+
+
+Started POST "/users/" for ::1 at 2019-09-16 18:01:12 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"user", "email"=>"user@user.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "user"], ["email", "user@user.com"], ["password_digest", "$2a$12$QUgldeZqVllXnh5Mjjpzz.PLmN3dfJKmQLhTfJcQBRVVMPhT.RZjC"], ["created_at", "2019-09-16 22:01:12.991340"], ["updated_at", "2019-09-16 22:01:12.991340"]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 201 Created in 295ms (Views: 0.7ms | ActiveRecord: 4.0ms | Allocations: 4787)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:01:13 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"user", "email"=>"user@user.com", "password"=>"[FILTERED]", "authentication"=>{"username"=>"user", "email"=>"user@user.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 282ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 800)
+
+
+Started POST "/users/" for ::1 at 2019-09-16 18:04:35 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 422 Unprocessable Entity in 32ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 6595)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:04:42 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1739)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:11:18 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.4ms | Allocations: 1792)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:15:33 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 1730)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:15:48 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 341ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 829)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:15:51 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 313ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 801)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:18:41 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 1730)
+
+
+Started PUT "/ideas/35" for ::1 at 2019-09-16 18:18:48 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Card game design", "body"=>"Whist meets Pokemon"}, "id"=>"35"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 942)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:18:56 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 288ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 800)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:19:38 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 1730)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:20:11 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 1730)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:20:54 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 286ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 801)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:22:53 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 286ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 800)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:22:53 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.6ms | Allocations: 1730)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:25:09 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (5.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 5.3ms | Allocations: 1730)
+
+
+Started POST "/users/" for ::1 at 2019-09-16 18:25:43 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"user2", "email"=>"user2@user.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@user.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "user2"], ["email", "user2@user.com"], ["password_digest", "$2a$12$FwzlR.vO1GVo0L.QCfTWq.3ZtlEWhBNn1d1Vub//S.RidDcCvjTNW"], ["created_at", "2019-09-16 22:25:43.333134"], ["updated_at", "2019-09-16 22:25:43.333134"]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 201 Created in 297ms (Views: 0.5ms | ActiveRecord: 4.0ms | Allocations: 4353)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:25:43 -0400
+Started GET "/ideas" for ::1 at 2019-09-16 18:25:43 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"user2", "email"=>"user2@user.com", "password"=>"[FILTERED]", "authentication"=>{"username"=>"user2", "email"=>"user2@user.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user2"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 308ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 809)
+
+
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 1792)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:26:16 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.6ms | Allocations: 1733)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:36:56 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 286ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 887)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:36:56 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.6ms | Allocations: 1733)
+
+
+Started PUT "/ideas/35" for ::1 at 2019-09-16 18:37:05 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"Card game design", "body"=>"Whist meets Pokemon"}, "id"=>"35"}
+  [1m[36mIdea Load (1.2ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:15:in `update'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from update at /Users/destinc/ga/Unit04/testp4/brainstorm/app/controllers/ideas_controller.rb:16)
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 939)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:37:25 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (10.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 2.8ms | ActiveRecord: 10.4ms | Allocations: 1730)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 18:37:39 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 286ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 800)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 18:37:39 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 1731)
+
+

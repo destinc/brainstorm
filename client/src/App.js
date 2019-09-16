@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import IdeasContainer from './components/IdeasContainer'
-import { Route, Link,  withRouter } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 
 
 import decode from 'jwt-decode'
@@ -32,12 +32,14 @@ class App extends Component {
     this.setState({
       currentUser: userData
     })
+    this.props.history.push('/notes')
   }
 
   handleRegister = async (e) => {
     e.preventDefault();
     await registerUser(this.state.authFormData);
     this.handleLogin();
+    this.props.history.push('/notes')
   }
 
   handleLogout = async () => {
@@ -45,6 +47,7 @@ class App extends Component {
     this.setState({
       currentUser: null
     })
+    this.props.history.push('/')
   }
 
   authHandleChange = async (e) => {
@@ -57,7 +60,7 @@ class App extends Component {
     }));
   }
 
- 
+
   render() {
     return (
       <div className="App">
@@ -65,33 +68,33 @@ class App extends Component {
           <h1 className="header-title">Brainstorm</h1>
         </div>
         <div>
-            {this.state.currentUser
-              ?
-              <>
-                <p>{this.state.currentUser.username}</p>
-                <button onClick={this.handleLogout}>Logout</button>
-              </>
-              :
-              <button onClick={this.handleLoginButton}>Login / Register</button>
-            
-            }
-          </div>
-        <Route exact path="/" render={ () => (
-        <IdeasContainer /> 
+          {this.state.currentUser
+            ?
+            <>
+              <p>{this.state.currentUser.username}</p>
+              <button onClick={this.handleLogout}>Logout</button>
+            </>
+            :
+            <button onClick={this.handleLoginButton}>Login / Register</button>
+
+          }
+        </div>
+        <Route exact path="/notes" render={() => (
+          <IdeasContainer />
         )}
         />
-    
-      <Route exact path="/login" render={() => (
-        <Login
-          handleLogin={this.handleLogin}
-          handleChange={this.authHandleChange}
-          formData={this.state.authFormData} />)} />
-      <Route exact path="/register" render={() => (
-        <Register
-          handleRegister={this.handleRegister}
-          handleChange={this.authHandleChange}
-          formData={this.state.authFormData} />)} />
-        
+
+        <Route exact path="/" render={() => (
+          <Login
+            handleLogin={this.handleLogin}
+            handleChange={this.authHandleChange}
+            formData={this.state.authFormData} />)} />
+        <Route exact path="/register" render={() => (
+          <Register
+            handleRegister={this.handleRegister}
+            handleChange={this.authHandleChange}
+            formData={this.state.authFormData} />)} />
+
       </div>
     );
 
