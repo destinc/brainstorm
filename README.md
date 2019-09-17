@@ -1,7 +1,7 @@
 
 
 # BrainStorm
-[Imgur](https://i.imgur.com/xRGQH6K.png)
+![](https://i.imgur.com/xRGQH6K.png)
 
 * An inspiration board made with react + rails
 
