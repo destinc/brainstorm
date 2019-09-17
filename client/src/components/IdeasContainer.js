@@ -6,7 +6,7 @@ import IdeaForm from './IdeaForm'
  import Notification from './Notification'
 import './Ideas.css'
 
-const url = 'http://localhost:3000/ideas'
+// const url = 'http://localhost:3000/ideas'
 
 class IdeasContainer extends Component {
     constructor(props) {
