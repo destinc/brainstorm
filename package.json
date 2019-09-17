@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@types/react-transition-group": "^4.2.2",
+    "jwt-decode": "^2.2.0",
     "react-transition-group": "^4.3.0"
   }
 }
