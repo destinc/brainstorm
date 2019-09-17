@@ -1,0 +1,36 @@
+.newIdeaButton {
+    display: inline-block;
+    background:  rgb(94, 179, 218);
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 70px;
+    padding:10px;
+    box-shadow: 2px 2px black;
+    border-radius: 40%;
+  }
+
+  button:hover {
+    background-color: rgb(103, 209, 103);
+  }
+
+  .note-text {
+    border: 0;
+    background: none;
+    outline: none;
+    margin-top:10px;
+    width: 140px;
+    font-size: 11px;
+  }
+  
+  .form-text:focus {
+    border: solid 1px lightgrey;
+  }
+  
+  textarea {
+    resize: none;
+    height: 90px;
+    font-size: 11px;
+  }
