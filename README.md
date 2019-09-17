@@ -5,9 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* An inspiration board made with react + rails
 
-* System dependencies
+* 
 
 * Configuration
 
