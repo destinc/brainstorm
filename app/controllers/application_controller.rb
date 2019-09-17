@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::API
     SECRET_KEY = Rails.application.secrets.secret_key_base.to_s
-
+    
+    def fallback_index_html
+      render :file => 'public/index.html'
+    end
   def encode(payload, exp = 24.hours.from_now)
     payload[:exp] = exp.to_i
     JWT.encode(payload, SECRET_KEY)

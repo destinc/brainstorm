@@ -6882,3 +6882,26 @@ Processing by IdeasController#destroy as HTML
 Completed 204 No Content in 7ms (ActiveRecord: 2.8ms | Allocations: 2190)
 
 
+Started GET "/ideas" for ::1 at 2019-09-16 23:02:01 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 7.7ms | ActiveRecord: 5.4ms | Allocations: 5530)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 23:03:07 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 298ms (Views: 0.2ms | ActiveRecord: 4.2ms | Allocations: 5719)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 23:03:07 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.7ms | Allocations: 1730)
+
+
