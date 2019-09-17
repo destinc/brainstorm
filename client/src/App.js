@@ -71,11 +71,11 @@ class App extends Component {
           {this.state.currentUser
             ?
             <>
-              <p>{this.state.currentUser.username}</p>
-              <button onClick={this.handleLogout}>Logout</button>
+              <p className='user-name'>Hello {this.state.currentUser.username}</p>
+              <button className='logout'onClick={this.handleLogout}>Logout</button>
             </>
             :
-            <button onClick={this.handleLoginButton}>Login / Register</button>
+            ''
 
           }
         </div>

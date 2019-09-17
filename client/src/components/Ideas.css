@@ -1,6 +1,6 @@
 .newIdeaButton {
     display: inline-block;
-    background: rgb(94, 94, 218);
+    background:  rgb(94, 179, 218);
     color: white;
     border: none;
     font-size: 18px;
@@ -13,7 +13,7 @@
   }
 
   button:hover {
-    background-color: green;
+    background-color: rgb(103, 209, 103);
   }
 
   .note-text {
