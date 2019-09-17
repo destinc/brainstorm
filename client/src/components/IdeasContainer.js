@@ -6,6 +6,7 @@ import IdeaForm from './IdeaForm'
  import Notification from './Notification'
 import './Ideas.css'
 
+const url = 'http://localhost:3000/ideas'
 
 class IdeasContainer extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class IdeasContainer extends Component {
     }
 
     componentDidMount() {
-      axios.get(  )
+      axios.get( )
       .then(response => {
           this.setState({ideas: response.data})
       })
@@ -48,7 +49,7 @@ class IdeasContainer extends Component {
       }
 
       deleteIdea = (id) => {
-        axios.delete()
+        axios.delete(`${id}`)
         .then(response => {
           const ideaIndex = this.state.ideas.findIndex(x => x.id === id)
           const ideas = update(this.state.ideas, { $splice: [[ideaIndex, 1]]})

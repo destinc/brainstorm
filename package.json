@@ -1,23 +1,21 @@
 {
-  "dependencies": {
-    "@types/react-transition-group": "^4.2.2",
-    "jwt-decode": "^2.2.0",
-    "react-transition-group": "^4.3.0"
-  },
   "name": "brainstorm",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
+  "dependencies": {
+    "jwt-decode": "^2.2.0"
+  },
   "devDependencies": {},
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm install && npm run build && cd ..",
-  "deploy": "cp -a client/build/. public/",
-  "postinstall": "npm run build && npm run deploy && echo 'Client built!'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "repository": {
     "type": "git",
