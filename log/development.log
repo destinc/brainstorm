@@ -6351,3 +6351,534 @@ Processing by IdeasController#index as HTML
 Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 1846)
 
 
+Started GET "/ideas" for ::1 at 2019-09-16 22:50:17 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 10.0ms | ActiveRecord: 7.6ms | Allocations: 5646)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 22:50:42 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"user", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"user", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 299ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 5671)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 22:50:43 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms | Allocations: 1846)
+
+
+Started POST "/ideas" for ::1 at 2019-09-16 22:50:51 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (1.0ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-17 02:50:51.982805"], ["updated_at", "2019-09-17 02:50:51.982805"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 4.0ms | Allocations: 2464)
+
+
+Started PUT "/ideas/37" for ::1 at 2019-09-16 22:50:56 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"userIdea", "body"=>""}, "id"=>"37"}
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.0ms | Allocations: 70201)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf9989248>):
+  
+app/controllers/ideas_controller.rb:15:in `update'
+Started PUT "/ideas/37" for ::1 at 2019-09-16 22:51:03 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"userIdea", "body"=>"another idea"}, "id"=>"37"}
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 0.0ms | Allocations: 70200)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf8da26a0>):
+  
+app/controllers/ideas_controller.rb:15:in `update'
+Started PUT "/ideas/36" for ::1 at 2019-09-16 22:51:13 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"User", "body"=>"User Idea"}, "id"=>"36"}
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.0ms | Allocations: 70202)
+
+
+Started DELETE "/ideas/37" for ::1 at 2019-09-16 22:51:14 -0400
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc896388>):
+  
+app/controllers/ideas_controller.rb:15:in `update'
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:23:in `destroy'
+  [1m[36mIdea Destroy (0.7ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 37]]
+  ↳ app/controllers/ideas_controller.rb:23:in `destroy'
+  [1m[35m (37.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:23:in `destroy'
+Completed 204 No Content in 85ms (ActiveRecord: 40.0ms | Allocations: 44599)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 22:51:28 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 288ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 807)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 22:51:29 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.6ms | Allocations: 1850)
+
+
+Started DELETE "/ideas/36" for ::1 at 2019-09-16 22:51:33 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:22:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:23:in `destroy'
+  [1m[36mIdea Destroy (0.8ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 36]]
+  ↳ app/controllers/ideas_controller.rb:23:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:23:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 3.6ms | Allocations: 2204)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 22:52:17 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 298ms (Views: 0.2ms | ActiveRecord: 7.2ms | Allocations: 5538)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 22:52:17 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (10.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 29ms (Views: 10.5ms | ActiveRecord: 15.9ms | Allocations: 4877)
+
+
+Started POST "/ideas" for ::1 at 2019-09-16 22:52:21 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (1.0ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-17 02:52:21.995545"], ["updated_at", "2019-09-17 02:52:21.995545"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 2304)
+
+
+Started PUT "/ideas/38" for ::1 at 2019-09-16 22:52:28 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"destin ", "body"=>""}, "id"=>"38"}
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 0.0ms | Allocations: 70192)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf8c5d510>):
+  
+app/controllers/ideas_controller.rb:15:in `update'
+Started PUT "/ideas/38" for ::1 at 2019-09-16 22:52:30 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"destin ", "body"=>"idea"}, "id"=>"38"}
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.0ms | Allocations: 70189)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc970470>):
+  
+app/controllers/ideas_controller.rb:15:in `update'
+Started POST "/users/" for ::1 at 2019-09-16 22:53:26 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"guy", "email"=>"guy@guy.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "guy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guy@guy.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "guy"], ["email", "guy@guy.com"], ["password_digest", "$2a$12$PTi3XQQvujuorRXGtTPZ4O80Y8uolDK3RLyzlhjk6TL1LdWf/JvVC"], ["created_at", "2019-09-17 02:53:26.510282"], ["updated_at", "2019-09-17 02:53:26.510282"]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 201 Created in 294ms (Views: 0.9ms | ActiveRecord: 3.6ms | Allocations: 4702)
+
+
+Started POST "/auth/login" for ::1 at 2019-09-16 22:53:26 -0400
+Started GET "/ideas" for ::1 at 2019-09-16 22:53:26 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"guy", "email"=>"guy@guy.com", "password"=>"[FILTERED]", "authentication"=>{"username"=>"guy", "email"=>"guy@guy.com", "password"=>"[FILTERED]"}}
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "guy"], ["LIMIT", 1]]
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 315ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1542)
+
+
+Completed 200 OK in 316ms (Views: 315.0ms | ActiveRecord: 0.6ms | Allocations: 2591)
+
+
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:53:38 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.0ms | Allocations: 70066)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafca127e8>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:53:39 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf8d40978>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:53:40 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:53:40 -0400
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc91b5d8>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:53:40 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.0ms | Allocations: 70325)
+
+
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:53:41 -0400
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc851530>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.0ms | Allocations: 70529)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc9e8d30>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.0ms | Allocations: 71729)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafa1b7ca8>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:53:42 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.0ms | Allocations: 71506)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf9983140>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:53:44 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.0ms | Allocations: 70066)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafca3c6b0>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started POST "/ideas" for ::1 at 2019-09-16 22:53:46 -0400
+Processing by IdeasController#create as HTML
+  Parameters: {"idea"=>{"title"=>"", "body"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[36mIdea Create (0.7ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", ""], ["body", ""], ["created_at", "2019-09-17 02:53:46.094502"], ["updated_at", "2019-09-17 02:53:46.094502"]]
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:10:in `create'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 6.1ms | Allocations: 2272)
+
+
+Started PUT "/ideas/39" for ::1 at 2019-09-16 22:53:50 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"guy idea", "body"=>""}, "id"=>"39"}
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.0ms | Allocations: 70189)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc94de70>):
+  
+app/controllers/ideas_controller.rb:15:in `update'
+Started PUT "/ideas/39" for ::1 at 2019-09-16 22:53:57 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"guy idea", "body"=>"guy's idea"}, "id"=>"39"}
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.0ms | Allocations: 70189)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafa151a20>):
+  
+app/controllers/ideas_controller.rb:15:in `update'
+Started PUT "/ideas/39" for ::1 at 2019-09-16 22:54:05 -0400
+Processing by IdeasController#update as HTML
+  Parameters: {"idea"=>{"title"=>"guy idea", "body"=>"guy's idea"}, "id"=>"39"}
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 0.0ms | Allocations: 70199)
+
+
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:54:05 -0400
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf8d72478>):
+  
+app/controllers/ideas_controller.rb:15:in `update'
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms | Allocations: 70609)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafcb088c8>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:54:07 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:54:07 -0400
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf8ca56a8>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms | Allocations: 70275)
+
+
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:54:07 -0400
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafcb1a7a8>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.0ms | Allocations: 71236)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafcaade50>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started POST "/auth/login" for ::1 at 2019-09-16 22:54:21 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"destinc", "email"=>"guy@guy.com", "password"=>"[FILTERED]", "authentication"=>{"username"=>"destinc", "email"=>"guy@guy.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "destinc"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4:in `login'
+Completed 200 OK in 287ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 887)
+
+
+Started GET "/ideas" for ::1 at 2019-09-16 22:54:21 -0400
+Processing by IdeasController#index as HTML
+  [1m[36mIdea Load (1.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" ORDER BY created_at DESC[0m
+  ↳ app/controllers/ideas_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.5ms | Allocations: 1965)
+
+
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:54:28 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf8cbe360>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:54:28 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafcb239c0>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:54:29 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.0ms | Allocations: 70241)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf8d79f70>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:54:29 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 0.0ms | Allocations: 71347)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf9953df0>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/39" for ::1 at 2019-09-16 22:54:30 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"39"}
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafca764f0>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/39" for ::1 at 2019-09-16 22:54:31 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"39"}
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafca16d20>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/39" for ::1 at 2019-09-16 22:54:31 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"39"}
+Started DELETE "/ideas/39" for ::1 at 2019-09-16 22:54:31 -0400
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.0ms | Allocations: 71153)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf967dd10>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"39"}
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 0.0ms | Allocations: 70815)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc94ff40>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:54:40 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feaf996b018>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:54:41 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:54:41 -0400
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc9e8970>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:54:41 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 0.0ms | Allocations: 70425)
+
+
+Started DELETE "/ideas/35" for ::1 at 2019-09-16 22:54:41 -0400
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc9973e0>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.0ms | Allocations: 71043)
+
+
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"35"}
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.0ms | Allocations: 70071)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafcaa6010>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafc945f68>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/31" for ::1 at 2019-09-16 22:54:44 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"31"}
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms | Allocations: 70065)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<IdeasController:0x00007feafa1ac1c8>):
+  
+app/controllers/ideas_controller.rb:22:in `destroy'
+Started DELETE "/ideas/39" for ::1 at 2019-09-16 22:54:58 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:23:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:24:in `destroy'
+  [1m[36mIdea Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 39]]
+  ↳ app/controllers/ideas_controller.rb:24:in `destroy'
+  [1m[35m (41.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:24:in `destroy'
+Completed 204 No Content in 61ms (ActiveRecord: 50.0ms | Allocations: 5819)
+
+
+Started DELETE "/ideas/38" for ::1 at 2019-09-16 22:55:00 -0400
+Processing by IdeasController#destroy as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:23:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:24:in `destroy'
+  [1m[36mIdea Destroy (0.3ms)[0m  [1m[31mDELETE FROM "ideas" WHERE "ideas"."id" = $1[0m  [["id", 38]]
+  ↳ app/controllers/ideas_controller.rb:24:in `destroy'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:24:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 2.8ms | Allocations: 2190)
+
+
